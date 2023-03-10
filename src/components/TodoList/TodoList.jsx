@@ -1,9 +1,10 @@
 import { Grid, GridItem, Todo } from 'components';
 import { useSelector } from 'react-redux';
-import { getTodos } from 'redux/selectors';
+import { selectVisibleTodos } from 'redux/selectors';
+
 
 export const TodoList = () => {
-  const todos = useSelector(getTodos);
+  const todos = useSelector(selectVisibleTodos);
   return (
     <Grid>
       {todos.length > 0 &&
